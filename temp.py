@@ -6,8 +6,8 @@ from matplotlib import pyplot as plt
 img = cv2.imread('16by16.png')
 encoded_image = img
 
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
 msg = 'kevikhietuo'
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 alphabet_dict = {}
 
