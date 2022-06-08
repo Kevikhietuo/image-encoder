@@ -2,7 +2,8 @@ import cv2
 
 
 def decode(img, length):
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    alphabet = "abcdefghijklmnopqrstuvwxyz _-"
+    imgY, imgX, imgChannel = img.shape
     alphabet_dict = {}
     message = ''
 
@@ -11,7 +12,7 @@ def decode(img, length):
     
     ctr = 0;
     for i in range (length):
-        quantized = img[15][ctr][0]
+        quantized = img[imgY-1][ctr][0]
         message += alphabet_dict[quantized]
         ctr += 1
     
