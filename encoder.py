@@ -16,4 +16,5 @@ def encode(img, msg):
         encoded_image[imgY-1][ctr][0] = alphabet_dict[i]
         ctr += 1
 
+    
     return encoded_image
