@@ -8,13 +8,22 @@ def encode(img, msg):
     alphabet = "abcdefghijklmnopqrstuvwxyz _-"
     alphabet_dict = {}
 
+    '''
+    coordinates list contains:
+    Y = y-coordinates
+    X = x-coordinates
+    C = channels
+    '''
+    coordinates = []
+    buffer_list = []
+
     for i, word in enumerate(alphabet):
         alphabet_dict[word] = i
 
-    ctr = 0;
     for i in msg:
-        encoded_image[imgY-1][ctr][0] = alphabet_dict[i]
-        ctr += 1
-
+        buffer_list.append([hash(i) % imgY, hash(chr(ord(i) + 1)) % imgX, hash(i) % 3])
+        coordinates.append(buffer_list)
+        buffer_list = []
+        encoded_image[hash(i) % imgY][hash(chr(ord(i) + 1)) % imgX][hash(i) % 3] = alphabet_dict[i]
     
-    return encoded_image
+    return encoded_image, coordinates
