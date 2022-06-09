@@ -1,4 +1,3 @@
-#CUSTOM FILE
 import message
 
 if __name__ == "__main__":
