@@ -15,7 +15,7 @@ def starter():
         msg = 'this is a trial message'
 
         #UPLOAD YOUR IMAGE TO ENCODE MESSAGE
-        img = cv2.imread('trial.jpg')
+        img = cv2.imread('starterImage.jpg')
 
         encoded_img, coordinates = encoder.encode(img, msg)
 
@@ -27,10 +27,10 @@ def starter():
         msg = 'this is a trial message'
 
         #UPLOAD YOUR IMAGE TO ENCODE MESSAGE
-        img = cv2.imread('trial.jpg')
+        img = cv2.imread('starterImage.jpg')
 
         encoded_img, coordinates = encoder.encode(img, msg)
         decoded_msg = decoder.decode(encoded_img, len(msg), coordinates)
         print(decoded_msg)
     
-    return 0
+    return 0``
